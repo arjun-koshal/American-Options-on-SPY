@@ -1,0 +1,56 @@
+---
+title: "FE 620 - Final Project"
+author: "Arjun Koshal"
+date: "12/8/2022"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r, warning=FALSE}
+library(quantmod)
+library(tseries)
+```
+
+
+```{r, warning=FALSE}
+set.seed(123)
+
+getSymbols("SPY", src="yahoo", from="2022-05-14", to="2022-11-14")
+names(SPY)
+plot(Cl(SPY), main="SPY Price")
+
+prices <- Cl(SPY)
+head(prices)
+tail(prices)
+
+logret <- periodReturn(prices, period="daily", type="log")
+plot(logret, main="SPY Daily Log Returns")
+
+qqnorm(logret, main="Q-Q plot of the log-returns")
+
+jarque.bera.test(logret)
+```
+
+
+```{r, warning=FALSE}
+
+```
+
+
+```{r, warning=FALSE}
+
+```
+
+
+```{r, warning=FALSE}
+
+```
+
+
+```{r, warning=FALSE}
+
+```
